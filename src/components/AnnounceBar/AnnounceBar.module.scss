@@ -1,0 +1,60 @@
+@import "../../app/_variables.scss";
+
+.announceBar {
+  position: relative;
+  box-sizing: border-box;
+  height: 46px;
+  padding-block: 4px;
+  background-color: $primary-color;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+
+.announceBar::before,
+.announceBar::after {
+  background: linear-gradient(90deg, $primary-color 0%, #26262600 100%);
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.announceBar::before {
+  top: 0;
+  left: 0;
+}
+
+.announceBar::after {
+  top: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.announceTextContainer {
+    display: flex;
+}
+
+.announcement {
+  font-size: 13px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.announceText::after {
+  content: "—";
+  margin-inline: 25px;
+  opacity: 0.5;
+}
+
+.announceCloseIcon {
+  position: absolute;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
