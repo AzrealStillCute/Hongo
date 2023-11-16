@@ -1,0 +1,15 @@
+@import "../../app/_variables.scss";
+
+.cursor {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    z-index: 1;
+    pointer-events: none;
+  }

@@ -1,5 +1,10 @@
 @import "../../app/_variables.scss";
 
+.collectionContainer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
 .headingContainer {
     width: inherit;
     text-align: center;
@@ -26,3 +31,132 @@
     margin-top: 15px;
 }
 
+.collection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 30px;
+    margin-inline: -15px;
+}
+
+.collectionItemWrapper {
+    width: 20%;
+    padding-inline: 15px;
+    box-sizing: border-box;
+}
+
+.collectionItem {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.collectionImg {
+    width: 100%;
+    object-fit: cover;
+    transition: scale .5s ease-out;
+}
+
+.collectionItemWrapper:nth-child(2n) .collectionItem .collectionImg {
+    aspect-ratio: 9 / 9;
+} 
+
+.collectionBtnOuter {
+    width: calc(100% - 50px);
+    height: fit-content;
+    position: absolute;
+    bottom: 25px;
+}
+
+.collectionBtnInner {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    position: relative;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.collectionBtnInner h5 {
+    text-align: left;
+    line-height: 25px;
+    margin: 0;
+    font-size: 16px;
+    color: $primary-color;
+}
+
+.collectionBtnInner span {
+    font-size: 12px;
+    color: #26262680;
+    font-weight: 700;
+    transition: opactiy .2s ease-out;
+}
+
+.collectionIcon {
+    position: absolute;
+    right: 10px;
+    opacity: 0;
+    transition: all .3s ease-out;
+}
+
+.collectionItem:hover .collectionImg {
+    scale: 1.15;
+}
+
+.collectionItem:hover .collectionBtnInner {
+    background-color: $primary-color;
+}
+
+.collectionItem:hover h5 {
+    color: #fff;
+}
+
+.collectionItem:hover span {
+    opacity: 0;
+}
+
+.collectionItem:hover .collectionIcon {
+    opacity: 1;
+    transform: translateX(-10px);
+}
+
+@media (max-width: 1300px) {
+    .collectionBtnOuter {
+        width: calc(100% - 30px);
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .collection {
+        flex-wrap: wrap;
+    }
+
+    .collectionItemWrapper {
+        width: 33.33333%;
+    }
+
+    .collectionItemWrapper:nth-child(2n) .collectionItem .collectionImg {
+        aspect-ratio: initial;
+    } 
+}
+
+@media (max-width: 990px) {
+
+    .collectionItemWrapper {
+        width: 50%;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .collectionItemWrapper {
+        width: 100%;
+    }
+}

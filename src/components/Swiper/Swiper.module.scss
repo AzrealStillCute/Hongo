@@ -1,9 +1,15 @@
 @import "../../app/_variables.scss";
 
 .swiperContainer {
+  position: relative;
   width: 100%;
   height: 700px;
   box-sizing: border-box;
+  z-index: 0;
+}
+
+.swiperContainer:hover {
+  cursor: none;
 }
 
 .swiper {
@@ -19,21 +25,37 @@
   height: inherit;
   background-size: cover;
   background-position: center;
-}
-
-.swiperContentContainer {
-  height: inherit;
-  width: inherit;
+  background-attachment: fixed;
   display: flex;
-  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
 }
 
+.swiperContentContainer {
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+}
+
 .swiperTextWraper {
+  width: 50%;
+  box-sizing: border-box;
+  margin-left: 80px;
+}
+
+.swiperTextWraper h1 {
   max-width: 540px;
-  padding-left: 80px;
-  padding-right: 15px;
+}
+
+.swiperItemImg {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  margin-left: 40px;
+}
+
+.swiperItemImg img {
+  width: 100%;
 }
 
 .swiperSubtitle {
@@ -63,6 +85,8 @@
 }
 
 .swiperBtn {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.5;
   margin-top: 30px;
   display: flex;
   align-items: center;
@@ -73,4 +97,155 @@
   color: white;
   background-color: $primary-color;
   gap: 5px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.swiperBtn:hover {
+  cursor: none;
+  color: #000000;
+  background-color: transparent;
+}
+
+.paginationHorizontal {
+  margin-bottom: 20px;
+}
+
+.bullet {
+  background-color: $primary-color;
+  display: inline-block;
+  margin-right: 25px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bullet::before {
+  content: "";
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #000000;
+  transform: translate(-8px, -8px);
+  transition-duration: 0.3s;
+  opacity: 0;
+}
+
+.bullet:hover::before {
+  opacity: 1;
+}
+
+.bullet:hover {
+  opacity: 0.5;
+}
+
+.activeBullet {
+  opacity: 0.5;
+}
+
+.activeBullet::before {
+  opacity: 1;
+}
+
+.activeBullet::before {
+  content: "";
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid $primary-color;
+  transform: translate(-8px, -8px);
+  transition-duration: 0.3s;
+}
+
+@media (max-width: 1200px) {
+  .swiperContainer {
+    height: 600px;
+  }
+
+  .swiperTextWraper {
+    margin-left: 40px;
+  }
+
+  .swiperItemName {
+    font-size: 88px;
+    line-height: 80px;
+  }
+
+  .swiperItemImg img {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 990px) {
+  .swiperContainer {
+    height: 500px;
+  }
+
+  .swiperItemName {
+    font-size: 68px;
+    line-height: 60px;
+  }
+
+  .swiperItemImg img {
+    max-width: 330px;
+  }
+
+  .swiperSubtitle {
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 770px) {
+  .swiperContainer {
+    height: 600px;
+  }
+
+  .swiperItem {
+    align-items: start;
+    width: 500px;
+  }
+
+  .swiperContentContainer {
+    flex-direction: column;
+  }
+
+  .swiperTextWraper {
+    width: inherit;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .swiperItemName {
+    width: inherit;
+    font-size: 52px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .swiperItemImg {
+    margin-block: 15px;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .swiperItemImg img {
+    width: 220px;
+  }
+
+  .swiperSubtitle {
+    font-size: 17px;
+  }
+
+  .swiperSubtitle::before {
+    display: none;
+  }
+
+  .swiperBtn {
+    margin-top: 10px;
+  }
 }

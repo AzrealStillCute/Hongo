@@ -1,14 +1,17 @@
 "use client";
 
 import styles from "./Swiper.module.scss";
-import { motion, useInView } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCreative } from "swiper/modules";
+import { EffectCreative, Pagination } from "swiper/modules";
 
-import "swiper/css";
-import "swiper/css/effect-creative";
+import "swiper/scss";
+import "swiper/scss/effect-creative";
+import "swiper/scss/pagination";
+
 import { ArrowRight } from "react-feather";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import Cursor from "./Cursor";
 
 const items = [
   {
@@ -22,43 +25,82 @@ const items = [
   },
   {
     id: 2,
-    productName: "Modern light lamp",
-    subtitle: "New lamps Collection",
+    productName: "Router signals",
+    subtitle: "Wi-Fi connection",
     background:
-      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-bg-01.jpg?v=1679374668",
+      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-bg-02.jpg?v=1679374668",
     productImg:
-      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-img-01.png?v=1677231322",
+      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-img-02.png?v=1677231322",
   },
   {
     id: 3,
-    productName: "Modern light lamp",
-    subtitle: "New lamps Collection",
+    productName: "Grocery container",
+    subtitle: "Containers for storage",
     background:
-      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-bg-01.jpg?v=1679374668",
+      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-bg-03.jpg?v=1679374667",
     productImg:
-      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-img-01.png?v=1677231322",
+      "https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-slider-img-03.png?v=1677231322",
   },
 ];
 
-// type TSwiperItem  = {
-//     productImg: string
-// }
-
-// function SwiperItem({productImg} : TSwiperItem) {
-//     return (
-
-//     )
-// }
-
 function HomeSwiper() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const subtitleVarients = {
+    active: {
+      translateY: 0,
+      opacity: 1,
+      transition: { ease: "easeOut", duration: 0.8 },
+    },
+    inActive: {
+      translateY: -14,
+      opacity: 0,
+    },
+  };
+
+  const nameVarients = {
+    active: {
+      rotateX: 0,
+      opacity: 1,
+      transition: { ease: "easeOut", duration: 0.6, delay: 0.2 },
+    },
+    inActive: {
+      rotateX: 60,
+      opacity: 0,
+    },
+  };
+
+  const buttonVarients = {
+    active: {
+      rotateX: 0,
+      opacity: 1,
+      transition: { ease: "easeOut", duration: 0.6, delay: 0.5 },
+    },
+    inActive: {
+      rotateX: 40,
+      opacity: 0,
+    },
+  };
 
   return (
-    <div className={styles.swiperContainer}>
+    <motion.div
+      ref={containerRef}
+      onHoverStart={(e) => {}}
+      className={styles.swiperContainer}
+    >
       <Swiper
+        modules={[EffectCreative, Pagination]}
+        pagination={{
+          clickable: true,
+          horizontalClass: styles.paginationHorizontal,
+          bulletClass: styles.bullet,
+          bulletActiveClass: styles.activeBullet,
+        }}
         slidesPerView={1}
         className={styles.swiper}
         effect={"creative"}
         loop={true}
+        speed={800}
         creativeEffect={{
           prev: {
             translate: [0, 0, -400],
@@ -67,7 +109,6 @@ function HomeSwiper() {
             translate: ["100%", 0, 0],
           },
         }}
-        modules={[EffectCreative]}
       >
         {items.map((item) => {
           return (
@@ -76,40 +117,42 @@ function HomeSwiper() {
               className={styles.swiperItem}
               style={{ backgroundImage: `url(${item.background})` }}
             >
-              <div className={styles.swiperContentContainer}>
-                <motion.div
-                  className={styles.swiperTextWraper}
-                //   initial={{
-                //     scaleY: 0.7,
-                //   }}
-                //   animate={{
-                //     scaleY: 1,
-                //   }}
-                >
-                  <div className={styles.swiperSubtitle}>{item.subtitle}</div>
-                  <motion.h1 className={styles.swiperItemName}
-                  >{item.productName}</motion.h1>
-                  <motion.button
-                    className={styles.swiperBtn}
-                    whileHover={{
-                      color: "#262626",
-                      backgroundColor: "#26262600",
-                    }}
-                    transition={{
-                      ease: "easeOut",
-                      duration: 0.3,
-                    }}
-                  >
-                    Explore products <ArrowRight size={16} />
-                  </motion.button>
-                </motion.div>
-                <img src={item.productImg} />
-              </div>
+              {({ isActive }) => {
+                return (
+                  <div className={styles.swiperContentContainer}>
+                    <div className={styles.swiperItemImg}>
+                      <img src={item.productImg} />
+                    </div>
+                    <motion.div
+                      variants={subtitleVarients}
+                      animate={isActive ? "active" : "inActive"}
+                      className={styles.swiperTextWraper}
+                    >
+                      <div className={styles.swiperSubtitle}>
+                        {item.subtitle}
+                      </div>
+                      <motion.h1
+                        variants={nameVarients}
+                        className={styles.swiperItemName}
+                      >
+                        {item.productName}
+                      </motion.h1>
+                      <motion.button
+                        className={styles.swiperBtn}
+                        variants={buttonVarients}
+                      >
+                        Explore products <ArrowRight size={16} />
+                      </motion.button>
+                    </motion.div>
+                  </div>
+                );
+              }}
             </SwiperSlide>
           );
         })}
       </Swiper>
-    </div>
+      <Cursor containerRef={containerRef} />
+    </motion.div>
   );
 }
 

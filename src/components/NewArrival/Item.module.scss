@@ -1,0 +1,188 @@
+@import "../../app/_variables.scss";
+
+.actionBtn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px #00000030;
+    transition: all .3s ease-in-out;
+}
+
+.actionBtnTooltip {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    position: absolute;
+    text-wrap: nowrap;  
+    right: calc(100% + 7px);
+    background-color: $primary-color;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: all .2s ease-out;
+}
+
+.actionBtn:hover .actionBtnTooltip {
+    opacity: 1;
+}
+
+.triangle {
+    position: absolute;
+    top: 6.5px;
+    right: -6px;
+    border-left: 7px solid $primary-color;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+.wishlistBtn {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.compareBtn {
+    transform: translateX(25px);
+    opacity: 0;
+}
+
+.productBtn {
+    position: relative;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 12px;
+    background-color: #fff;
+    padding-block: 12px;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all .3s ease-out;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.productBtnContent {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    font-weight: 500;
+}
+
+.activeProductBtn {
+    position: relative;
+    transition: all .2s ease-in-out;
+    transition-delay: .1s;
+    pointer-events: none
+}
+
+.inActiveProductBtn {
+    color: #fff;
+    position: absolute;
+    bottom: -20px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    pointer-events: none
+}
+
+.optionBtn {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+.viewBtn {
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.productBtn:hover {
+    background-color: $primary-color;
+}
+
+.productBtn:hover .activeProductBtn {
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.productBtn:hover .inActiveProductBtn {
+    transform: translateY(-33px);
+    opacity: 1;
+}
+
+.itemWrapper {
+    width: 20%;
+    padding-inline: 7.5px;
+}
+
+.item {
+    position: relative;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.actionBtnContainer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.productsBtnContainer {
+    position: absolute;
+}
+
+.productImg {
+    width: 100%;
+    object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+
+.item:hover {
+    .wishlistBtn, .compareBtn, .optionBtn , .viewBtn {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .productImg {
+        scale: 1.1;
+        filter: blur(4px);
+    }
+}
+
+.itemDescription {
+    padding-block: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6px;
+}
+
+.itemName {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.itemPrice {
+    color: $secondary-color;
+}
+
+.firstPrice {
+    text-decoration: line-through;
+}
+
+.secondPrice::before {
+    content: "hel";
+    color: white;
+}
+
+
+
