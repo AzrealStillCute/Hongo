@@ -28,10 +28,6 @@
     transition: all .2s ease-out;
 }
 
-.actionBtn:hover .actionBtnTooltip {
-    opacity: 1;
-}
-
 .triangle {
     position: absolute;
     top: 6.5px;
@@ -116,7 +112,8 @@
 
 .itemWrapper {
     width: 20%;
-    padding-inline: 7.5px;
+    padding-inline: 15px;
+    box-sizing: border-box;
 }
 
 .item {
@@ -146,18 +143,6 @@
     transition: all .3s ease-in-out;
 }
 
-.item:hover {
-    .wishlistBtn, .compareBtn, .optionBtn , .viewBtn {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    .productImg {
-        scale: 1.1;
-        filter: blur(4px);
-    }
-}
-
 .itemDescription {
     padding-block: 20px;
     display: flex;
@@ -177,6 +162,7 @@
 
 .firstPrice {
     text-decoration: line-through;
+
 }
 
 .secondPrice::before {
@@ -184,5 +170,86 @@
     color: white;
 }
 
+.smallViewProductBtnContainer {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #e7e7e7;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.smallViewProductBtn {
+    padding-block: 10px;
+    cursor: pointer;
+}
+
+.smallViewProductBtnContainer .smallViewProductBtn:first-child {
+    border-right: 1px solid #e7e7e7;
+}
+
+
+@media (min-width: 1200px) {
+    .item:hover {
+        .wishlistBtn, .compareBtn, .optionBtn , .viewBtn {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    
+        .productImg {
+            scale: 1.1;
+            filter: blur(4px);
+        }
+    }
+
+    .actionBtn:hover .actionBtnTooltip {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .smallViewProductBtnContainer {
+        display: grid;
+    }
+
+    .actionBtn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .actionBtnContainer {
+        top: 15px;
+        right: 15px;
+    }
+
+    .wishlistBtn, .compareBtn {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+    .itemWrapper {
+        width: 25%;
+    }
+}
+
+@media (max-width: 990px) {
+    .itemWrapper {
+        width: 33.3333%;
+    }
+}
+
+@media (max-width: 770px) {
+
+    .actionBtnContainer {
+        top: 10px;
+        right: 10px;
+    }
+
+    .itemWrapper {
+        width: 50%;
+        padding-inline: 7.5px;
+    }
+
+}
 
 

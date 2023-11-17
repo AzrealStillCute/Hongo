@@ -1,0 +1,90 @@
+.limitedDealContainer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    aspect-ratio: 2 / 1;
+    padding-inline: 15px;
+    border-radius: 10px;
+}
+
+.limitedLeftSide {
+    position: relative;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-image: url("https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-home-img-01.jpg?v=1663913311");
+    background-size: cover;
+    background-position: center;
+}
+
+.limitedRightSide {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: url("https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-home-img-02.jpg?v=1677068607");
+    background-size: cover;
+    background-position: center;
+}
+
+.pinWrapper {
+    position: absolute;
+}
+
+.pinWrapper:first-child {
+    left: 61%;
+    top: 16%;
+}
+
+.pinWrapper:last-child {
+    left: 45%;
+    bottom: 25%;
+}
+
+.pin {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.pin::after {
+    content: "";
+    position: absolute;
+    top: -17.5px;
+    left: -17.5px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform-origin: center;
+    animation: rader 1.5s ease-out infinite;
+}
+
+@keyframes rader {
+    0% {scale: 0;}
+    90% {scale: 1;} 
+    100% {opacity: 0;}
+}
+
+.priceDealItemContainer {
+    max-width: 45%;
+    width: 100%;
+}
+
+.priceDealItemCard {
+    width: inherit;
+}
+
+.priceDealItemImg {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.timer {
+    position: absolute;
+}
+
+.limitedRightSide {
+    
+}
+

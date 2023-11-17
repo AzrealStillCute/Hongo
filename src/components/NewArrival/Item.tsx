@@ -50,12 +50,20 @@ function ProductBtn({ type }: TProductBtnProps) {
   );
 }
 
-function Item() {
-  const ratingElements = Array.from({ length: 5 }, (_, index) => {
-    if (index === 4) {
-      return <Star weight="fill" color="gray" size={15} />;
+type TItemProps = {
+  itemName: string
+  rating: number
+  prevPrice: string
+  curPrice: string
+  productImg: string
+}
+
+function Item({ itemName, rating, prevPrice, curPrice, productImg }: TItemProps) {
+  const starCreator = (rating: number) => Array.from({ length: 5 }, (_, index) => {
+    if (index === rating) {
+      return <Star key={index + 1} weight="fill" color="gray" size={15} />;
     } else {
-      return <Star weight="fill" size={15} color="#262626" />;
+      return <Star key={index + 1} weight="fill" size={15} color="#262626" />;
     }
   });
 
@@ -64,7 +72,7 @@ function Item() {
       <div className={styles.item}>
         <img
           className={styles.productImg}
-          src="https://hongotheme.myshopify.com/cdn/shop/products/decor-product-04.jpg?v=1663909840&width=165"
+          src={productImg}
         />
         <div className={styles.actionBtnContainer}>
           <ActionBtn type="wishlist" />
@@ -75,12 +83,16 @@ function Item() {
           <ProductBtn type="views" />
         </div>
       </div>
+      <div className={styles.smallViewProductBtnContainer}>
+        <button className={styles.smallViewProductBtn}><Package size={16} color="gray" fontWeight="light"/></button>
+        <button className={styles.smallViewProductBtn}><Eye size={16} color="gray" fontWeight="light"/></button>
+      </div>
       <div className={styles.itemDescription}>
-        <div className={styles.itemRating}>{ratingElements}</div>
-        <div className={styles.itemName}>Wall clock gray pink</div>
+        <div className={styles.itemRating}>{starCreator(rating)}</div>
+        <div className={styles.itemName}>{itemName}</div>
         <div className={styles.itemPrice}>
-          <span className={styles.firstPrice}>$25.00</span>
-          <span className={styles.secondPrice}>$22.99</span>
+          <span className={styles.firstPrice}>${prevPrice}</span>
+          <span className={styles.secondPrice}>${curPrice}</span>
         </div>
       </div>
     </div>

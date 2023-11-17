@@ -2,12 +2,12 @@
 
 .collectionContainer {
     padding-top: 80px;
-    padding-bottom: 80px;
 }
 
 .headingContainer {
     width: inherit;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .subHeader {
@@ -134,6 +134,15 @@
 }
 
 @media (max-width: 1200px) {
+
+    .subHeader {
+        font-size: 14px;
+    }
+
+    .header {
+        font-size: 36px;
+    }
+
     .collection {
         flex-wrap: wrap;
     }
@@ -149,12 +158,19 @@
 
 @media (max-width: 990px) {
 
+    .header {
+        font-size: 32px;
+    }
+
     .collectionItemWrapper {
         width: 50%;
     }
 }
 
 @media (max-width: 580px) {
+    .header {
+        font-size: 28px;
+    }
 
     .collectionItemWrapper {
         width: 100%;

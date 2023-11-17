@@ -44,7 +44,7 @@ const collectionItems = [
   },
 ];
 
-function Heading({ header, subHeader }: THeading) {
+export function Heading({ header, subHeader }: THeading) {
   return (
     <div className={styles.headingContainer}>
       <span className={styles.subHeader}>{subHeader}</span>
