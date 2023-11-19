@@ -4,6 +4,7 @@ import styles from "./Collection.module.scss";
 type THeading = {
   header: string;
   subHeader: string;
+  priceDealHeading?: boolean
 };
 
 const collectionItems = [
@@ -44,9 +45,9 @@ const collectionItems = [
   },
 ];
 
-export function Heading({ header, subHeader }: THeading) {
+export function Heading({ header, subHeader, priceDealHeading }: THeading) {
   return (
-    <div className={styles.headingContainer}>
+    <div className={`${styles.headingContainer} ${priceDealHeading && styles.priceDealHeading}`}>
       <span className={styles.subHeader}>{subHeader}</span>
       <h3 className={styles.header}>{header}</h3>
     </div>

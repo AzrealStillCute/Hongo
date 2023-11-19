@@ -1,0 +1,48 @@
+@import "../../app/_variables.scss";
+
+.brandsContainer {
+    margin-bottom: 60px;
+}
+
+.brandLogosContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logoWrapper {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    transition: transform .25s ease-out;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: translateY(-5px);
+}
+
+.brandsTextContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.brandsText {
+    color: $primary-color;
+}
+
+.shopNowLink {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 990px) {
+    .logoWrapper {
+        width: 33.333333%;
+    }
+}

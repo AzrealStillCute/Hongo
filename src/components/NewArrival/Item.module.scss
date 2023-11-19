@@ -1,255 +1,257 @@
 @import "../../app/_variables.scss";
 
 .actionBtn {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin-bottom: 10px;
-    box-shadow: 0 0 10px #00000030;
-    transition: all .3s ease-in-out;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px #00000030;
+  transition: all 0.3s ease-in-out;
 }
 
 .actionBtnTooltip {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    position: absolute;
-    text-wrap: nowrap;  
-    right: calc(100% + 7px);
-    background-color: $primary-color;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    opacity: 0;
-    transition: all .2s ease-out;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: absolute;
+  text-wrap: nowrap;
+  right: calc(100% + 7px);
+  background-color: $primary-color;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: all 0.2s ease-out;
 }
 
 .triangle {
-    position: absolute;
-    top: 6.5px;
-    right: -6px;
-    border-left: 7px solid $primary-color;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
+  position: absolute;
+  top: 6.5px;
+  right: -6px;
+  border-left: 7px solid $primary-color;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
 }
 
 .wishlistBtn {
-    transform: translateX(10px);
-    opacity: 0;
+  transform: translateX(10px);
+  opacity: 0;
 }
 
 .compareBtn {
-    transform: translateX(25px);
-    opacity: 0;
+  transform: translateX(25px);
+  opacity: 0;
 }
 
 .productBtn {
-    position: relative;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 12px;
-    background-color: #fff;
-    padding-block: 12px;
-    width: 160px;
-    display: flex;
-    justify-content: center;
-    border-radius: 25px;
-    overflow: hidden;
-    transition: all .3s ease-out;
-    cursor: pointer;
-    margin-top: 10px;
+  position: relative;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  background-color: #fff;
+  padding-block: 12px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .productBtnContent {
-    display: flex;
-    align-items: center;
-    column-gap: 5px;
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  font-weight: 500;
 }
 
 .activeProductBtn {
-    position: relative;
-    transition: all .2s ease-in-out;
-    transition-delay: .1s;
-    pointer-events: none
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.1s;
+  pointer-events: none;
 }
 
 .inActiveProductBtn {
-    color: #fff;
-    position: absolute;
-    bottom: -20px;
-    opacity: 0;
-    transition: all .2s ease-in-out;
-    pointer-events: none
+  color: #fff;
+  position: absolute;
+  bottom: -20px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
 }
 
 .optionBtn {
-    transform: translateX(-20px);
-    opacity: 0;
+  transform: translateX(-20px);
+  opacity: 0;
 }
 
 .viewBtn {
-    transform: translateX(20px);
-    opacity: 0;
+  transform: translateX(20px);
+  opacity: 0;
 }
 
 .productBtn:hover {
-    background-color: $primary-color;
+  background-color: $primary-color;
 }
 
 .productBtn:hover .activeProductBtn {
-    transform: translateY(-40px);
-    opacity: 0;
+  transform: translateY(-40px);
+  opacity: 0;
 }
 
 .productBtn:hover .inActiveProductBtn {
-    transform: translateY(-33px);
-    opacity: 1;
+  transform: translateY(-33px);
+  opacity: 1;
 }
 
 .itemWrapper {
-    width: 20%;
-    padding-inline: 15px;
-    box-sizing: border-box;
+  width: 20%;
+  padding-inline: 15px;
+  box-sizing: border-box;
 }
 
 .item {
-    position: relative;
-    height: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 5px;
+  position: relative;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .actionBtnContainer {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .productsBtnContainer {
-    position: absolute;
+  position: absolute;
 }
 
 .productImg {
-    width: 100%;
-    object-fit: cover;
-    transition: all .3s ease-in-out;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
 
 .itemDescription {
-    padding-block: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 6px;
+  padding-block: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 6px;
 }
 
 .itemName {
-    font-weight: 600;
-    font-size: 16px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .itemPrice {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 
 .firstPrice {
-    text-decoration: line-through;
-
+  text-decoration: line-through;
 }
 
 .secondPrice::before {
-    content: "hel";
-    color: white;
+  content: "hel";
+  color: transparent;
 }
 
 .smallViewProductBtnContainer {
-    display: none;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid #e7e7e7;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #e7e7e7;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .smallViewProductBtn {
-    padding-block: 10px;
-    cursor: pointer;
+  padding-block: 10px;
+  cursor: pointer;
 }
 
 .smallViewProductBtnContainer .smallViewProductBtn:first-child {
-    border-right: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
 }
 
-
 @media (min-width: 1200px) {
-    .item:hover {
-        .wishlistBtn, .compareBtn, .optionBtn , .viewBtn {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    
-        .productImg {
-            scale: 1.1;
-            filter: blur(4px);
-        }
+  .item:hover {
+    .wishlistBtn,
+    .compareBtn,
+    .optionBtn,
+    .viewBtn {
+      transform: translateX(0);
+      opacity: 1;
     }
 
-    .actionBtn:hover .actionBtnTooltip {
-        opacity: 1;
+    .productImg {
+      scale: 1.1;
+      filter: blur(4px);
     }
+  }
+
+  .actionBtn:hover .actionBtnTooltip {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1200px) {
+  .smallViewProductBtnContainer {
+    display: grid;
+  }
 
-    .smallViewProductBtnContainer {
-        display: grid;
-    }
+  .actionBtn {
+    width: 35px;
+    height: 35px;
+  }
 
-    .actionBtn {
-        width: 35px;
-        height: 35px;
-    }
+  .actionBtnContainer {
+    top: 15px;
+    right: 15px;
+  }
 
-    .actionBtnContainer {
-        top: 15px;
-        right: 15px;
-    }
+  .wishlistBtn,
+  .compareBtn {
+    opacity: 1;
+    transform: translate(0);
+  }
 
-    .wishlistBtn, .compareBtn {
-        opacity: 1;
-        transform: translate(0);
-    }
+  .itemWrapper {
+    width: 25%;
+  }
 
-    .itemWrapper {
-        width: 25%;
-    }
+  .item {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 @media (max-width: 990px) {
-    .itemWrapper {
-        width: 33.3333%;
-    }
+  .itemWrapper {
+    width: 33.3333%;
+  }
 }
 
 @media (max-width: 770px) {
+  .actionBtnContainer {
+    top: 10px;
+    right: 10px;
+  }
 
-    .actionBtnContainer {
-        top: 10px;
-        right: 10px;
-    }
-
-    .itemWrapper {
-        width: 50%;
-        padding-inline: 7.5px;
-    }
-
+  .itemWrapper {
+    width: 50%;
+    padding-inline: 7.5px;
+  }
 }
-
-

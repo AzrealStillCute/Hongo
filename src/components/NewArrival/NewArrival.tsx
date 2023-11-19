@@ -2,7 +2,7 @@ import styles from "./NewArrival.module.scss";
 import { Heading } from "../Collection/Collection";
 import Item from "./Item";
 
-const items = [
+const newArrivalItems = [
   {
     id: 1,
     itemName: "Wall clock gray pink",
@@ -100,7 +100,7 @@ function NewArrival() {
     <div className={styles.newArriavlContainer}>
       <Heading header="Our new arrivals" subHeader="TRENDING PRODUCTS" />
       <div className={styles.itemsContainer}>
-        {items.map((item) => {
+        {newArrivalItems.map((item) => {
           return (
             <Item
               key={item.id}

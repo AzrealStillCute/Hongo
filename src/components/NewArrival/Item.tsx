@@ -50,15 +50,15 @@ function ProductBtn({ type }: TProductBtnProps) {
   );
 }
 
-type TItemProps = {
+type TItemDescriptionProps = {
   itemName: string
   rating: number
   prevPrice: string
   curPrice: string
-  productImg: string
 }
 
-function Item({ itemName, rating, prevPrice, curPrice, productImg }: TItemProps) {
+export function ItemDescription({rating, itemName, prevPrice, curPrice}: TItemDescriptionProps) {
+  
   const starCreator = (rating: number) => Array.from({ length: 5 }, (_, index) => {
     if (index === rating) {
       return <Star key={index + 1} weight="fill" color="gray" size={15} />;
@@ -66,6 +66,24 @@ function Item({ itemName, rating, prevPrice, curPrice, productImg }: TItemProps)
       return <Star key={index + 1} weight="fill" size={15} color="#262626" />;
     }
   });
+
+  return (
+    <div className={styles.itemDescription}>
+    <div className={styles.itemRating}>{starCreator(rating)}</div>
+    <div className={styles.itemName}>{itemName}</div>
+    <div className={styles.itemPrice}>
+      <span className={styles.firstPrice}>${prevPrice}</span>
+      <span className={styles.secondPrice}>${curPrice}</span>
+    </div>
+  </div>
+  )
+}
+
+type TItemProps = TItemDescriptionProps & {
+  productImg: string
+}
+
+function Item({ itemName, rating, prevPrice, curPrice, productImg }: TItemProps) {
 
   return (
     <div className={styles.itemWrapper}>
@@ -87,14 +105,7 @@ function Item({ itemName, rating, prevPrice, curPrice, productImg }: TItemProps)
         <button className={styles.smallViewProductBtn}><Package size={16} color="gray" fontWeight="light"/></button>
         <button className={styles.smallViewProductBtn}><Eye size={16} color="gray" fontWeight="light"/></button>
       </div>
-      <div className={styles.itemDescription}>
-        <div className={styles.itemRating}>{starCreator(rating)}</div>
-        <div className={styles.itemName}>{itemName}</div>
-        <div className={styles.itemPrice}>
-          <span className={styles.firstPrice}>${prevPrice}</span>
-          <span className={styles.secondPrice}>${curPrice}</span>
-        </div>
-      </div>
+      <ItemDescription itemName={itemName} rating={rating} prevPrice={prevPrice} curPrice={curPrice}/>
     </div>
   );
 }
