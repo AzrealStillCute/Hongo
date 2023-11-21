@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Swiper.module.scss";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Pagination } from "swiper/modules";
 
@@ -85,7 +85,6 @@ function HomeSwiper() {
   return (
     <motion.div
       ref={containerRef}
-      onHoverStart={(e) => {}}
       className={styles.swiperContainer}
     >
       <Swiper
@@ -151,7 +150,7 @@ function HomeSwiper() {
           );
         })}
       </Swiper>
-      <Cursor containerRef={containerRef} />
+      <Cursor containerRef={containerRef}/>
     </motion.div>
   );
 }

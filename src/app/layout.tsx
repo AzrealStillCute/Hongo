@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google"
 import './globals.css'
 import AnnounceBar from '@/components/AnnounceBar/AnnounceBar'
 import NavBar from '@/components/NavBar/NavBar'
+import Footer from '@/components/Footer/Footer'
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <AnnounceBar/>
         <NavBar/>
         {children}
+        <Footer/>
         </body>
     </html>
   )

@@ -196,6 +196,12 @@
   width: fit-content;
 }
 
+@media (max-width: 770px) {
+  .navBarLogo {
+    width: 110px;
+  }
+}
+
 @media (max-width: 1200px) {
   .navBar {
     height: 60px;

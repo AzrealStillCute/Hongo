@@ -8,19 +8,19 @@ function Brands() {
         <div className={styles.brandsContainer}>
             <div className={styles.brandLogosContainer}>
                 <div className={styles.logoWrapper}>
-                <Image className={styles.logo} width={180} height={54} alt="Target" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-01.png?v=1673358233"/>
+                <Image className={styles.logo} fill alt="Target" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-01.png?v=1673358233"/>
                 </div>
                 <div className={styles.logoWrapper}>
-                <Image className={styles.logo} width={180} height={54} alt="Gubi" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-02.png?v=1673356852"/>
+                <Image className={styles.logo} fill alt="Gubi" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-02.png?v=1673356852"/>
                 </div>
                 <div className={styles.logoWrapper}>
-                <Image className={styles.logo} width={180} height={54} alt="Baro" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-03.png?v=1673425363"/>
+                <Image className={styles.logo} fill alt="Baro" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-03.png?v=1673425363"/>
                 </div>
                 <div className={styles.logoWrapper}>
-                <Image className={styles.logo} width={180} height={54} alt="Moda" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-04.png?v=1673356852"/>
+                <Image className={styles.logo} fill alt="Moda" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-04.png?v=1673356852"/>
                 </div>
                 <div className={styles.logoWrapper}>
-                <Image className={styles.logo} width={180} height={54} alt="Feather" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-05.png?v=1673358247"/>
+                <Image className={styles.logo} fill alt="Feather" src="https://hongotheme.myshopify.com/cdn/shop/files/decor-clients-05.png?v=1673358247"/>
                 </div>
             </div>
             <div className={styles.brandsTextContainer}>

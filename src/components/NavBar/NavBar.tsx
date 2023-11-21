@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
+import Link from "next/link";
 
 import {
   ChevronDown,
@@ -43,12 +44,12 @@ function NavBar() {
     <div className={styles.navBarContainer}>
       <div className={styles.navBar}>
         <div className={styles.navLogoContainer}>
-          <a className={styles.navLogoLink}>
+          <Link href={"/"} className={styles.navLogoLink}>
             <img
               src="//hongotheme.myshopify.com/cdn/shop/files/demo-decor-logo-black_2x_5b3290bf-727f-4898-88b0-d55cf78960bc.png?v=1683543509"
               className={styles.navBarLogo}
             />
-          </a>
+          </Link>
         </div>
         <div className={styles.navLinksContainer}>
           <ul className={styles.navLinksList}>
@@ -101,8 +102,12 @@ function NavBar() {
             className={`${styles.navIcons} ${styles.desktopSearch}`}
             onClick={activeSearchboxHandler}
           />
-          <User size={19} className={styles.navIcons} />
-          <Heart size={19} className={styles.navIcons} />
+          <Link href={"/login"}>
+            <User size={19} color="#262626" className={styles.navIcons} />
+          </Link>
+          <Link href={"/wishlist"}>
+            <Heart size={19} color="#262626" className={styles.navIcons} />
+          </Link>
           <ShoppingBag size={19} className={styles.navIcons} />
         </div>
       </div>

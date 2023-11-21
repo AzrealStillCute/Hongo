@@ -14,11 +14,14 @@
 
 .logoWrapper {
     width: 20%;
+    height: 55px;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .logo {
+    object-fit: contain;
     transition: transform .25s ease-out;
     cursor: pointer;
 }
@@ -44,5 +47,16 @@
 @media (max-width: 990px) {
     .logoWrapper {
         width: 33.333333%;
+    }
+}
+
+@media (max-width: 770px) {
+
+    .brandLogosContainer {
+        column-gap: 30px;
+    }
+
+    .logoWrapper {
+        width: calc(50% - 15px);
     }
 }
