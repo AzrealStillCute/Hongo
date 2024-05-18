@@ -1,6 +1,7 @@
 import { Eye, Heart, Layers, Package } from "react-feather";
 import styles from "./Item.module.scss";
 import { Star } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 
 type TActionBtnProps = {
   type: "wishlist" | "compare";
@@ -88,7 +89,8 @@ function Item({ itemName, rating, prevPrice, curPrice, productImg }: TItemProps)
   return (
     <div className={styles.itemWrapper}>
       <div className={styles.item}>
-        <img
+        <Image
+          alt="product_img"
           className={styles.productImg}
           src={productImg}
         />

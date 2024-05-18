@@ -53,9 +53,9 @@ function Footer() {
             FIND A LOCAL STORE <ArrowRight size={13} />
           </span>
         </div>
-        {footerLinks.map((item) => {
+        {footerLinks.map((item, id) => {
           return (
-            <FooterLinksMenu linkTitle={item.linkTitle} links={item.links} />
+            <FooterLinksMenu key={id} linkTitle={item.linkTitle} links={item.links} />
           );
         })}
       </div>

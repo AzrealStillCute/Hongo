@@ -17,6 +17,7 @@ import {
 } from "react-feather";
 import styles from "./NavBar.module.scss";
 import { useState, useRef } from "react";
+import Image from "next/image";
 
 const NavLinks = [
   "Demo",
@@ -45,8 +46,9 @@ function NavBar() {
       <div className={styles.navBar}>
         <div className={styles.navLogoContainer}>
           <Link href={"/"} className={styles.navLogoLink}>
-            <img
-              src="//hongotheme.myshopify.com/cdn/shop/files/demo-decor-logo-black_2x_5b3290bf-727f-4898-88b0-d55cf78960bc.png?v=1683543509"
+            <Image
+              alt="logo"
+              src="https://hongotheme.myshopify.com/cdn/shop/files/demo-decor-logo-black_2x_5b3290bf-727f-4898-88b0-d55cf78960bc.png?v=1683543509"
               className={styles.navBarLogo}
             />
           </Link>

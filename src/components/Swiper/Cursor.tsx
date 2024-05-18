@@ -38,7 +38,7 @@ type TCursor = {
       containerRef.current?.addEventListener("mouseleave", () => setOnHover(false))
       window.addEventListener("pointermove", handlePointerMove);
       return () => window.removeEventListener("pointermove", handlePointerMove);
-    }, []);
+    });
   
     return (
       <motion.div

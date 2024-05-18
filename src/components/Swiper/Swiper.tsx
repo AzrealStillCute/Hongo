@@ -12,6 +12,7 @@ import "swiper/scss/pagination";
 import { ArrowRight } from "react-feather";
 import { useRef } from "react";
 import Cursor from "./Cursor";
+import Image from "next/image";
 
 const items = [
   {
@@ -120,7 +121,7 @@ function HomeSwiper() {
                 return (
                   <div className={styles.swiperContentContainer}>
                     <div className={styles.swiperItemImg}>
-                      <img src={item.productImg} />
+                      <Image alt="product_img" src={item.productImg} />
                     </div>
                     <motion.div
                       variants={subtitleVarients}

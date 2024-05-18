@@ -63,7 +63,7 @@ function Blogs() {
                 <div className={styles.blogsWrapper}>
                 {
                     blogs.map(blog => {
-                        return <Blog blogTitle={blog.blogTitle} blogArthur={blog.blogArthur} blogImage={blog.blogImage} blogImageAlt={blog.blogImageAlt}/>
+                        return <Blog key={blog.id} blogTitle={blog.blogTitle} blogArthur={blog.blogArthur} blogImage={blog.blogImage} blogImageAlt={blog.blogImageAlt}/>
                     })
                 }
                 </div>

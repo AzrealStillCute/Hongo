@@ -1,5 +1,6 @@
 import { ArrowRight } from "react-feather";
 import styles from "./Collection.module.scss";
+import Image from "next/image";
 
 type THeading = {
   header: string;
@@ -69,7 +70,7 @@ function CollectionItem({
   return (
       <div className={styles.collectionItemWrapper}>
         <div className={styles.collectionItem}>
-        <img src={productImg} className={styles.collectionImg}/>
+        <Image alt="product_img" src={productImg} className={styles.collectionImg}/>
       <button className={styles.collectionBtnOuter}>
         <div className={styles.collectionBtnInner}>
           <h5>{productName}</h5>
